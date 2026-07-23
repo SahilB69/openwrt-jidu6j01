@@ -65,7 +65,7 @@ echo "==> Updating feeds"
 echo "==> Installing feeds"
 ./scripts/feeds install -a
 
-# Copy config and inject ccache dir dynamically
+# Copy config dynamically
 cp "$REPO_DIR/$DEVICE_CONFIG" .config
 
 echo "==> Running make defconfig"
