@@ -16,18 +16,6 @@ git checkout v25.12.5
 git config --global user.email "ci@build.local"
 git config --global user.name "CI Builder"
 
-# Fetch the PR
-git fetch origin pull/23510/head:pr-23510 --force
-
-# Cherry-pick commits
-git log HEAD..pr-23510 \
-    --reverse \
-    --grep="jio\|jidu" \
-    --regexp-ignore-case \
-    --format="%H" |
-xargs -r git cherry-pick -X theirs
-
-
 echo "==> Adding initramfs-factory.ubi artifact"
 # Add initramfs-factory.ubi artifact to JIDU6J01
 
